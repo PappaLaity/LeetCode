@@ -15,5 +15,11 @@ class LeetCode():
             for j in range(i+1,len(nums)):
                 if nums[i]+nums[j] == target:
                     return [i,j]
+    
+    def isPalindrome(self, x: int) -> bool:
+        if x < 0 :
+            return False
+        reversed = int(str(x)[::-1])
+        return x == reversed
 
 
