@@ -17,3 +17,10 @@ if __name__ == "__main__":
     assert result == True
     # assert result == False
     print(f"Calling Palindrome function to {number}  give {result}: ")
+
+    number = 12121
+    # number = -10
+    result = leet_obj.isPalindromeV2(number)
+    assert result == True
+    # assert result == False
+    print(f"Calling V2 of Palindrome function to {number}  give {result}: ")
