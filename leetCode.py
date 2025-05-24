@@ -56,7 +56,7 @@ class LeetCode():
         """
         if x < 0 :
             return False
-        res = list(map(int, str(x)))
+        res =  str(x)
         for i in range(len(res)//2):
             if res[i]!=res[-(i+1)]:
                 return False
