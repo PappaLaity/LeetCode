@@ -61,5 +61,36 @@ class LeetCode():
             if res[i]!=res[-(i+1)]:
                 return False
         return True
+    
+    def romanToInt(self, s: str) -> int:
+        """
+            Summary:
+                This function take as input a Roman Numeral and Convert it into Integer
+            Args:
+                A roman numeral written using string 
+            Return: 
+                An Integer conversion of Roman numeral
+        """
+        romans = ['I','V','X','L','C','D','M']
+        values = [1,5,10,50,100,500,1000]
+        sum = 0
+        n = len(s)
+        # Go through the value of S (Recuperer sa taille)
+        # for each element check the next if exist
+        for i in range(n-1):
+            index1 = romans.index(s[i])
+            index2 = romans.index(s[i+1])
+        # If the next element don't correspond to the next element in the roman list
+            # we add the correspond value to the list
+            if index1 >= index2:
+                sum += values[romans.index(s[i])]
+        # otherwise
+            # We substract the next and the previous corresponding value
+            # we add it in the sum numbers
+            else:
+                sum -= values[romans.index(s[i])]
+
+        sum+= values[romans.index(s[n-1])]
+        return sum
 
 
