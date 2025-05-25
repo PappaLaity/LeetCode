@@ -35,3 +35,8 @@ if __name__ == "__main__":
     prefix = leet_obj.longestCommonPrefix(strs)
 
     print(f"The Longest common prefix for {strs} is: {prefix} ")
+
+    # Is Valid Function  
+    s = "(]"
+    result = leet_obj.isValid(s)
+    assert result == False
