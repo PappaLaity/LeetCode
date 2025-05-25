@@ -31,8 +31,10 @@ class LeetCode():
             Summary:
                         Given an integer, we may see if it is a palindrome or not. 
                         A value is a palindrome if It reads the same backwards as forwards
+
             Args:
                 x (int) : The value to see if it is a Palindrom
+
             Returns: 
                     A boolean Response about the nature of x (True if is palindrome, False if not) 
         """
@@ -49,8 +51,10 @@ class LeetCode():
                         Given an integer, we may see if it is a palindrome or not. 
                         A value is a palindrome if It reads the same backwards as forwards
                         For this function we resolve the problem without slicing
+            
             Args:
                 x (int) : The value to see if it is a Palindrom
+
             Returns: 
                     A boolean Response about the nature of x (True if is palindrome, False if not) 
         """
@@ -66,8 +70,10 @@ class LeetCode():
         """
             Summary:
                 This function take as input a Roman Numeral and Convert it into Integer
+
             Args:
                 A roman numeral written using string 
+
             Return: 
                 An Integer conversion of Roman numeral
         """
@@ -93,4 +99,27 @@ class LeetCode():
         sum+= values[romans.index(s[n-1])]
         return sum
 
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        """
+            Summary:
+                    This function find in the given list of words or string item the longest common
+                    value.
+            Args:
+                A List of string containing different words
 
+            Return:
+                    A Longest common prefix as a string
+
+        """
+        s = []
+        strs.sort(key = len)
+        item = strs[0]
+        n = len(item)
+        j = 0
+        while j < n :
+            for i in range(1,len(strs)):
+                if strs[i][j] != item[j]:
+                     return "".join(s)
+            s.append(item[j])
+            j+=1
+        return "".join(s)
