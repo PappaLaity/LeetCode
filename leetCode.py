@@ -1,5 +1,6 @@
 '''
 * leetCode.py Contain
+* Objective: Two Easy - Two Medium - 1 Hard by Week 
 
 '''
 
@@ -61,8 +62,8 @@ class LeetCode():
         if x < 0 :
             return False
         res =  str(x)
-        for i in range(len(res)//2):
-            if res[i]!=res[-(i+1)]:
+        for idx in range(len(res)//2):
+            if res[idx]!=res[-(idx+1)]:
                 return False
         return True
     
