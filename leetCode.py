@@ -109,13 +109,15 @@ class LeetCode():
 
             Return:
                     A Longest common prefix as a string
-
         """
         s = []
+        #  Sort the list of string by len of string
         strs.sort(key = len)
+        # The longest common prefix is at most the first value which have the smallest len
         item = strs[0]
         n = len(item)
         j = 0
+
         while j < n :
             for i in range(1,len(strs)):
                 if strs[i][j] != item[j]:
@@ -123,3 +125,39 @@ class LeetCode():
             s.append(item[j])
             j+=1
         return "".join(s)
+
+    def isValid(self, s: str) -> bool:
+        """
+            Summary: 
+                    Given a string s containing only brackets determine if the input string is valid.
+                    An input string is valid if:
+                        Open brackets must be closed by the same type of brackets.
+                        Open brackets must be closed in the correct order.
+                        Every close bracket has a corresponding open bracket of the same type.
+            Args:
+                A string s containing just the characters '(', ')', '{', '}', '[' and ']'
+            Return:
+                A Boolean value meaning if the bracket in the string is well arranged
+
+        """
+        openedbracket = ["(","[","{"]
+        closedbracket = [")","]","}"]
+        pile = []
+        # If the first character is a closed bracket return False
+        if s[0] in closedbracket:
+            return False
+        for i in range(len(s)):
+            # Check For each Character if it is in a opened bracked add it to list pile
+            if s[i] in openedbracket:
+                pile.append(s[i])
+            # Other Wise check if the last element in pile correspond to the open bracket the actual element
+            elif s[i] in closedbracket:
+                if (len(pile) == 0):
+                    return False
+                elif openedbracket.index(pile[len(pile)-1]) == closedbracket.index(s[i]):
+                    pile.pop()
+                else:
+                    return False
+            else:
+                return False # Mean the input value is not Bracket
+        return len(pile) == 0
