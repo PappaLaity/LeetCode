@@ -24,3 +24,14 @@ if __name__ == "__main__":
     assert result == True
     # assert result == False
     print(f"Calling V2 of Palindrome function to {number}  give {result}: ")
+
+    # Numeral Roman to Integer
+    roman = "MCMXCIV"
+    intValue = leet_obj.romanToInt(roman)
+    print(f"The Equivalent value of {roman} in Integer gives {intValue}: ")
+    
+    # The longest Common prefix in a list
+    strs = ["planting", "planter", "plants", "planted", "plantation"]
+    prefix = leet_obj.longestCommonPrefix(strs)
+
+    print(f"The Longest common prefix for {strs} is: {prefix} ")
