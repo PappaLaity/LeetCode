@@ -1,5 +1,6 @@
 '''
 * leetCode.py Contain
+* Objective: Two Easy - Two Medium - 1 Hard by Week 
 
 '''
 
@@ -61,8 +62,8 @@ class LeetCode():
         if x < 0 :
             return False
         res =  str(x)
-        for i in range(len(res)//2):
-            if res[i]!=res[-(i+1)]:
+        for idx in range(len(res)//2):
+            if res[idx]!=res[-(idx+1)]:
                 return False
         return True
     
@@ -161,3 +162,30 @@ class LeetCode():
             else:
                 return False # Mean the input value is not Bracket
         return len(pile) == 0
+    
+    def removeDuplicates(self, nums: List[int]) -> int:
+        """
+            Summary: 
+                    Remove duplicate functions give a number of unique value in a given list
+                    the first k elements in the list  should be the unique value
+            Args: 
+                Sorted list Of integer
+            Outputs:
+                    Number k of unique value
+                    the given list will be modified such that the k first element will be the unique values
+        """
+        list_wtout_duplicate = []
+        idx = []
+        # for i in range(len(nums)):
+        #     elt = nums[i]
+        #     if elt not in list_wtout_duplicate:
+        #         list_wtout_duplicate.append(elt)
+        #         idx.append(i)
+        list_wtout_duplicate = list(dict.fromkeys(nums))
+        k = len(list_wtout_duplicate)
+        for i in range(len(nums)):
+            if i not in idx:
+                list_wtout_duplicate.append(nums[i])
+        for i in range(len(nums)):
+            nums[i]=list_wtout_duplicate[i]
+        return k
