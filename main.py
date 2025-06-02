@@ -40,3 +40,10 @@ if __name__ == "__main__":
     s = "(]"
     result = leet_obj.isValid(s)
     assert result == False
+    
+    # Remove duplicates values in a given list
+    nums  = [1,1,2]
+    expect = [1,2]
+    k = leet_obj.removeDuplicates(nums)
+    assert k == 2
+    assert expect == nums[:k]
