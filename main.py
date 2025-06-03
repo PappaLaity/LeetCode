@@ -47,3 +47,10 @@ if __name__ == "__main__":
     k = leet_obj.removeDuplicates(nums)
     assert k == 2
     assert expect == nums[:k]
+
+    # Remove Element and Occurence in a given list
+
+    nums,val = [0,1,2,2,3,0,4,2], 2
+    k = leet_obj.removeElement(nums,val)
+    expectedNums = nums[:k]
+    assert val not in expectedNums

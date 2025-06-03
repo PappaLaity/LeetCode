@@ -189,3 +189,21 @@ class LeetCode():
         for i in range(len(nums)):
             nums[i]=list_wtout_duplicate[i]
         return k
+
+    def removeElement(self, nums: List[int], val: int) -> int:
+        """
+            Summary:
+                Removes Element given a list of integer
+            Args:
+                A list of Integer nums
+                A value val to remove in the list
+            Return:
+                The number k of elements in the list different to the given value
+                The list k first element in the list should not have the value val
+
+        """
+        k = nums.count(val)
+        for i in range(k):
+            nums.remove(val)
+            nums.append(val)
+        return len(nums)-k
