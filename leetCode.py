@@ -207,3 +207,30 @@ class LeetCode():
             nums.remove(val)
             nums.append(val)
         return len(nums)-k
+    
+    def answerString(self, word: str, numFriends: int) -> str:
+        """
+            Summary:
+            Given a string word, and an integer numFriends. word is split into numFriends non-empty strings, such that no previous round has had the exact same split.
+            All the split words are put into a box.
+            Find the lexicographically largest string from the box after all the rounds are finished.
+            Args:
+                The word
+                Number of Friends
+            Returns:
+                The largest lexicography 
+        """
+        if numFriends == 1 :
+            return word
+        if len(word) == numFriends:
+            return max(word)
+        largestLexic = ""
+        n = len(word)
+        k =1
+        largestSize = n - numFriends + 1
+        for j in range(k,largestSize+1):
+            for i in range(n - j + 1):
+                if word[i:i+largestSize] > largestLexic:
+                    largestLexic = word[i:i+largestSize]
+            
+        return largestLexic

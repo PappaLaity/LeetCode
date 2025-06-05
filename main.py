@@ -54,3 +54,10 @@ if __name__ == "__main__":
     k = leet_obj.removeElement(nums,val)
     expectedNums = nums[:k]
     assert val not in expectedNums
+
+    # answerString
+    s= "aann"
+    numFriends =2
+    result = leet_obj.answerString(s,numFriends)
+    print("Result: ",result)
+    assert result == "nn"
