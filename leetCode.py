@@ -234,3 +234,20 @@ class LeetCode():
                     largestLexic = word[i:i+largestSize]
             
         return largestLexic
+    
+    def strStr(self, haystack: str, needle: str) -> int:
+        """
+            Summary:
+                Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, 
+                or -1 if needle is not part of haystack.
+            Args:
+                Two Strings haystack and needle
+            Returns:
+                The Index of the first occurrence of needle in haystack -1 otherwise
+        """
+        occur = -1 
+        needle_size = len(needle)
+        for i in range(len(haystack)-needle_size + 1):
+            if haystack[i:i+needle_size] == needle:
+                return i
+        return occur

@@ -61,3 +61,10 @@ if __name__ == "__main__":
     result = leet_obj.answerString(s,numFriends)
     print("Result: ",result)
     assert result == "nn"
+
+    # Find the index of the first Occurrence
+
+    haystack = "leetcode"
+    needle = "leeto"
+    occur = leet_obj.strStr(haystack,needle)
+    assert occur == -1
