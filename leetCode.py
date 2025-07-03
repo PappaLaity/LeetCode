@@ -262,3 +262,24 @@ class LeetCode():
         """
         words = s.split()
         return len(words[-1])
+    
+    def plusOne(self, digits: List[int]) -> List[int]:
+        """
+            Summary:  Given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer
+                    Increment the large integer by one and return the resulting array of digits.
+            Args: A large Integer as a list of integer
+            Returns: larger Integer incremented to 1
+        """
+        n = len(digits)
+        i = 1
+        digits[n-i] += 1
+        while digits[n-i] > 9 :
+            if n-i == 0:
+                digits[n-i]-=10
+                digits.insert(0,1)
+                return digits
+            else:
+                digits[n-i]-=10
+                digits[n-i-1]+=1
+                i +=1
+        return digits
