@@ -68,3 +68,13 @@ if __name__ == "__main__":
     needle = "leeto"
     occur = leet_obj.strStr(haystack,needle)
     assert occur == -1
+
+    # Length of the last word in a sentence
+    s = "luffy is still joyboy"
+
+    last_word_len = leet_obj.lengthOfLastWord(s)
+    assert last_word_len == 6
+    
+    digits = [4,3,2,1]
+    digitsPlusOne = leet_obj.plusOne(digits)
+    assert digitsPlusOne == [4,3,2,2]

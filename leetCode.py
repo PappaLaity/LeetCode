@@ -251,3 +251,35 @@ class LeetCode():
             if haystack[i:i+needle_size] == needle:
                 return i
         return occur
+    
+    def lengthOfLastWord(self, s: str) -> int:
+        """
+            Summary : Given a Sentence return the len of the last word 
+                s consists of only English letters and spaces ' '.
+                There will be at least one word in s.
+            Args: Sentence s
+            Returns: Length of the last word 
+        """
+        words = s.split()
+        return len(words[-1])
+    
+    def plusOne(self, digits: List[int]) -> List[int]:
+        """
+            Summary:  Given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer
+                    Increment the large integer by one and return the resulting array of digits.
+            Args: A large Integer as a list of integer
+            Returns: larger Integer incremented to 1
+        """
+        n = len(digits)
+        i = 1
+        digits[n-i] += 1
+        while digits[n-i] > 9 :
+            if n-i == 0:
+                digits[n-i]-=10
+                digits.insert(0,1)
+                return digits
+            else:
+                digits[n-i]-=10
+                digits[n-i-1]+=1
+                i +=1
+        return digits
