@@ -251,3 +251,14 @@ class LeetCode():
             if haystack[i:i+needle_size] == needle:
                 return i
         return occur
+    
+    def lengthOfLastWord(self, s: str) -> int:
+        """
+            Summary : Given a Sentence return the len of the last word 
+                s consists of only English letters and spaces ' '.
+                There will be at least one word in s.
+            Args: Sentence s
+            Returns: Length of the last word 
+        """
+        words = s.split()
+        return len(words[-1])
